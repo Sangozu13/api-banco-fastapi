@@ -9,6 +9,9 @@ services:
       - mongo
     environment:
       - MONGO_URL=mongodb://mongo:27017
+    volumes:
+      - .:/api_banco
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
     networks:
       - banco_net
 

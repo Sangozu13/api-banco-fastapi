@@ -1,10 +1,10 @@
 import pytest
 from fastapi.testclient import TestClient
-from routes.banco import banco
+from routes.bank_routes import bank
 from config.bd import conn
 from bson import ObjectId
 
-client = TestClient(banco)
+client = TestClient(bank)
 collection = conn.local.Account
 
 @pytest.fixture(autouse=True)
