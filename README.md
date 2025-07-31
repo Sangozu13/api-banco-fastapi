@@ -69,7 +69,7 @@ Si prefieres correr la aplicación sin usar Docker, sigue estos pasos:
 
 1. Clonar el repositorio
 
-git clone https://github.com/usuario/api-banco.git
+git clone https://github.com/Sangozu13/api-banco-fastapi.git
 
 cd api-banco
 
@@ -99,6 +99,7 @@ mongodb://localhost:27017
 
 ## Estructura del proyecto
 
+```plaintext
 .
 ├── Dockerfile
 ├── docker-compose.yml
@@ -116,15 +117,18 @@ mongodb://localhost:27017
 ├── tests/
 │   └── test_accounts.py
 └── requirements.txt
+```
 
 ## Endpoints principales
 
 (Método - Endpoint - Descripción)
 
-GET - /accounts - Lista todas las cuentas
-GET - /accounts/{id} - Consulta una cuenta por ID
-POST - /accounts - Crea una nueva cuenta
-PATCH - /accounts/{id} - Actualiza el saldo de una cuenta
+- `GET -  /accounts` – Lista todas las cuentas  
+- `GET - /accounts/{id}` – Consulta una cuenta por ID  
+- `POST - /accounts` – Crea una nueva cuenta  
+- `PATCH -  /accounts/{id}` – Actualiza el saldo de una cuenta  
+- `DELETE - /accounts/{id}` – Elimina una cuenta (opcional)  
+
 
 ## Notas
 - El entorno está configurado para desarrollo en caliente gracias a --reload en Uvicorn.
