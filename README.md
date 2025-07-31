@@ -76,7 +76,9 @@ pytest tests/
 
 ### Construcción y ejecución
 
+```bash
 docker-compose up --build
+``` 
 
 Esto levanta:
 
@@ -90,24 +92,33 @@ Si prefieres correr la aplicación sin usar Docker, sigue estos pasos:
 
 1. Clonar el repositorio
 
+```bash
 git clone https://github.com/Sangozu13/api-banco-fastapi.git
+``` 
 
 cd api-banco
 
 2. Crear un entorno virtual
 
+```bash
 python -m venv env
+``` 
 
+```bash
 source env/bin/activate
+``` 
 
 3. Instalar dependencias
 
+```bash
 pip install -r requirements.txt
+``` 
 
 4. Ejecutar la aplicación
 
+```bash
 uvicorn app:app --reload
-
+``` 
 
 Esto levantará la API en http://127.0.0.1:8000
 
