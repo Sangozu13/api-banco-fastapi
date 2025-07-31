@@ -29,7 +29,12 @@ def update_account_balance(id: str, newBalance: UpdateSaldoAccount):
     if not account:
         raise HTTPException(status_code=404, detail="Cuenta no encontrada")
 
-    new_balance = account["saldo"] + newBalance.saldo
+    if newBalance.operacion == "sumar":
+        new_balance = account["saldo"] + newBalance.saldo
+    elif newBalance.operacion == "restar":
+        new_balance = account["saldo"] - newBalance.saldo
+    else:
+        raise HTTPException(status_code=400, detail="Operación no válida")
 
     conn.local.Account.update_one(
         {"_id": object_id},

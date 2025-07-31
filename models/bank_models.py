@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Literal
 
 
 class Account(BaseModel):
@@ -12,4 +12,4 @@ class Account(BaseModel):
     
 class UpdateSaldoAccount(BaseModel):
     saldo: int
-    
+    operacion: Literal["sumar", "restar"]
