@@ -59,10 +59,12 @@ def test_update_account():
     })
     id = res.json()
     
-    response = client.patch(f"/accounts/{id}", json={"saldo": 150})
+    response = client.patch(f"/accounts/{id}", json={
+        "saldo": 150,
+        "operacion": "sumar"
+    })
     assert response.status_code == 200
     assert response.json()["saldo_actualizado"] == 250
 
     cuenta = collection.find_one({"_id": ObjectId(id)})
     assert cuenta["saldo"] == 250
-
