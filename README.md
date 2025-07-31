@@ -46,10 +46,31 @@ Las pruebas están escritas con `pytest` y utilizan el `TestClient` de FastAPI. 
 - Listado de cuentas
 - Actualización de saldo
 
+### Ejecutar pruebas sin Docker (modo local)
+
+Asegúrate de tener un entorno virtual creado e instalar dependencias con:
+
+```bash
+pip install -r requirements.txt
+``` 
+
+Luego ejecuta las pruebas con:
+
 ```bash
 pytest tests/
 ``` 
 
+### Ejecutar pruebas dentro de Docker
+
+Ingresar al contenedor y correr las pruebas manualmente:
+
+```bash
+docker-compose exec api_banco bash
+``` 
+
+```bash
+pytest tests/
+``` 
 
 ## Uso con Docker y Docker Compose
 
