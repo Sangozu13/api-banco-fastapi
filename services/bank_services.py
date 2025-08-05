@@ -35,7 +35,10 @@ def update_account_balance(id: str, newBalance: UpdateSaldoAccount):
         new_balance = account["saldo"] - newBalance.saldo
     else:
         raise HTTPException(status_code=400, detail="Operación no válida")
-
+    
+    if newBalance.operacion == "restar" and account["saldo"] < newBalance.saldo:
+        raise HTTPException(status_code=400, detail="Saldo insuficiente")
+     
     conn.local.Account.update_one(
         {"_id": object_id},
         {"$set": {"saldo": new_balance}}
