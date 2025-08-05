@@ -65,11 +65,7 @@ pytest tests/
 Ingresar al contenedor y correr las pruebas manualmente:
 
 ```bash
-docker-compose exec api_banco bash
-``` 
-
-```bash
-pytest tests/
+docker compose exec api_banco pytest tests/
 ``` 
 
 ## Uso con Docker y Docker Compose
