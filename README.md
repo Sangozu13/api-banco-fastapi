@@ -73,7 +73,7 @@ docker compose exec api_banco pytest tests/
 ### Construcción y ejecución
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ``` 
 
 Esto levanta:
